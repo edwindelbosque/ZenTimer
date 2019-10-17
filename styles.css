@@ -46,6 +46,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-right: 25px;
 }
 
 h2 {
@@ -149,16 +150,42 @@ input:focus {
   justify-content: space-between;
 }
 
+.timer-inputs-section input {
+  margin-top: 22px;
+}
+
 .timer-inputs-section div {
   width: 250px;
 }
 
 .start-button {
-  width: 200px;
+  width: 230px;
   background: rgb(246, 230, 255);
   font-size: 22px;
   margin-top: 20px;
   padding: 5px 10px;
+  color: rgb(95, 53, 114);
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.205);
+  transition: .15s;
+}
+
+.start-button:hover {
+  background: rgb(250, 242, 255);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.42);
+  transition: .15s;
+}
+
+.start-button:active {
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.42);
+  transition: .15s;
+}
+
+.start-button:focus {
+  outline: none;
 }
 
 .form-button-container {
@@ -166,4 +193,37 @@ input:focus {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.card-container {
+  min-height: 500px;
+  display: flex;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.29);
+  background-color: rgb(84, 74, 91);
+  padding: 30px 20px;
+  flex-direction: column;
+  color: white;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: rgb(110, 101, 138);
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.205);
+}
+
+.colored-bar {
+  background-color: rgb(111, 255, 111);
+  width: 7px;
+  height: 35px;
+  border-radius: 10px;
+}
+
+.card p {
+  color: rgb(206, 196, 212);
 }
