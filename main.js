@@ -11,14 +11,17 @@ const formData = {
   intention: undefined,
   category: undefined,
   minutes: undefined,
-  seconds: undefined
+  seconds: undefined,
+  initialTime: undefined
 };
 
 const submitForm = event => {
   if (formData.intention && formData.minutes && formData.seconds && formData.category) {
-    formData.intention = inputIntention.value;
+    const mins = parseInt(formData.minutes);
+    const secs = parseInt(formData.seconds);
     formData.minutes = parseInt(formData.minutes);
     formData.seconds = parseInt(formData.seconds);
+    formData.initialTime = { mins, secs }
     toggleForm();
   }
 }
@@ -71,6 +74,7 @@ const stopTimer = () => {
   }
   container.classList.add('form-section')
   container.classList.remove('timer-section')
+  appendToHistory();
   clearForm(event);
   container.innerHTML = `
   <h3>Select a category</h3>
@@ -104,6 +108,23 @@ const stopTimer = () => {
     <button class="start-button" id="button-submit">START ACTIVITY</button>
   </div>
   `
+}
+
+const appendToHistory = () => {
+  const { intention, category, initialTime } = formData;
+  const { mins, secs } = initialTime;
+  document.querySelector('#card-container').insertAdjacentHTML('afterbegin', `
+  <div class="card">
+          <div>
+            <h3>${category}</h3>
+            <p>${mins}:${secs < 10 ? `0${secs}` : secs} mins</p>
+            <p>${intention}</p>
+          </div>
+          <div>
+            <div class="colored-bar"></div>
+          </div>
+        </div>
+  `)
 }
 
 const handleFormButtons = event => {

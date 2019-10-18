@@ -241,13 +241,14 @@ input:focus {
   padding: 30px 20px;
   flex-direction: column;
   color: white;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .card {
   background-color: rgb(110, 101, 138);
   padding: 10px 15px;
   border-radius: 4px;
+  margin-bottom: 15px;
   width: 100%;
   display: flex;
   justify-content: space-between;
