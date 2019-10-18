@@ -286,3 +286,68 @@ input:focus {
   color: rgb(255, 255, 255);
   transition: .2s;
 }
+
+@media only screen and (max-width: 950px) {
+  .main-area {
+    flex-direction: column;
+    margin: 30px 15px;
+    font-size: 80%;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  aside {
+    margin-top: 50px;
+    width: 100%;
+  }
+
+  .timer-section {
+    padding: 0;
+  }
+
+  h6 {
+    font-size: 50px;
+  }
+
+  img {
+    height: 35px;
+  }
+
+  .form-section {
+    padding: 30px;
+  }
+
+  .categories button {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+  }
+
+  .categories {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 950px) {
+
+  .main-area {
+    margin: 40px;
+  }
+
+  .form-section {
+    padding: 50px;
+  }
+
+  img {
+    height: 50px;
+  }
+
+  .categories button {
+    width: 100px;
+    height: 120px;
+    font-size: 16px;
+  }
+
+}
