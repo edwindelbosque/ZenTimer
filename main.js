@@ -15,16 +15,18 @@ const formData = {
 };
 
 const submitForm = event => {
-  if (inputIntention.value && inputMinutes.value && inputSeconds.value && formData.category) {
+  if (formData.intention && formData.minutes && formData.seconds && formData.category) {
     formData.intention = inputIntention.value;
-    formData.minutes = parseInt(inputMinutes.value);
-    formData.seconds = parseInt(inputSeconds.value);
+    formData.minutes = parseInt(formData.minutes);
+    formData.seconds = parseInt(formData.seconds);
     toggleForm();
   }
 }
 
 const clearForm = event => {
+  const formElements = [inputIntention, inputMinutes, inputSeconds];
   const formKeys = Object.keys(formData);
+  formElements.forEach(element => element.value = '');
   formKeys.forEach(key => formData[key] = undefined);
 }
 
@@ -64,12 +66,12 @@ const startTimer = () => {
 
 const stopTimer = () => {
   const container = document.querySelector('form');
-  clearForm(event);
   while (container.firstChild) {
     container.firstChild.remove();
   }
   container.classList.add('form-section')
   container.classList.remove('timer-section')
+  clearForm(event);
   container.innerHTML = `
   <h3>Select a category</h3>
   <section class="categories">
@@ -122,11 +124,11 @@ const handleFormButtons = event => {
 const handleFormInputs = event => {
   event.preventDefault(event);
   if (event.target.id === 'input-intention') {
-    console.log(event.target.value)
+    formData.intention = event.target.value
   } else if (event.target.id === 'input-minutes') {
-    console.log(event.target.value)
+    formData.minutes = event.target.value
   } else if (event.target.id === 'input-seconds') {
-    console.log(event.target.value)
+    formData.seconds = event.target.value
   }
 }
 
