@@ -80,7 +80,7 @@ button {
   
 }
 
-.categories button {
+.inactive {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,10 +92,10 @@ button {
   border-radius: 6px;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.158);
   color: rgb(162, 155, 255);
-  transition: .15s;
+  transition: .2s;
 }
 
-.categories button:hover {
+.inactive:hover {
   background-color: rgba(0, 0, 0, 0.221);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.336);
   transition: .15s;
@@ -223,4 +223,18 @@ input:focus {
 
 .card p {
   color: rgb(206, 196, 212);
+}
+
+.active {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(38, 38, 38);
+  color: rgb(255, 255, 255);
+  transition: .2s;
+}
+
+.active:hover {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: rgb(40, 40, 40);
+  color: rgb(255, 255, 255);
+  transition: .2s;
 }

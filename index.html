@@ -20,15 +20,15 @@
       <form>
         <h3>Select a category</h3>
         <section class="categories">
-          <button id="button-study">
+          <button id="button-study" class="inactive" value="study">
             <img src="/assets/study.svg" class="button-icon" />
             Study
           </button>
-          <button id="button-meditate">
+          <button id="button-meditate" class="inactive" value="meditate">
             <img src="/assets/meditate.svg" class="button-icon" />
             Meditate
           </button>
-          <button id="button-exercise">
+          <button id="button-exercise" class="inactive" value="exercise">
             <img src="/assets/exercise.svg" class="button-icon" />
             Exercise
           </button>
@@ -38,11 +38,11 @@
         <div class="timer-inputs-section">
           <div>
             <h3>Minutes</h3>
-            <input id="input-minutes" />
+            <input id="input-minutes" type="number" />
           </div>
           <div>
             <h3>Seconds</h3>
-            <input id="input-seconds" />
+            <input id="input-seconds" type="number" />
           </div>
         </div>
         <div class="form-button-container">
