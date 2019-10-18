@@ -20,16 +20,11 @@ const submitForm = event => {
     formData.minutes = parseInt(inputMinutes.value);
     formData.seconds = parseInt(inputSeconds.value);
     toggleForm();
-    // clearForm(event);
   }
 }
 
 const clearForm = event => {
-  // const buttons = [buttonStudy, buttonMeditate, buttonExercise];
-  // const formElements = [inputIntention, inputMinutes, inputSeconds];
   const formKeys = Object.keys(formData);
-  // buttons.forEach(button => button.classList.remove("active"));
-  // formElements.forEach(element => element.value = '');
   formKeys.forEach(key => formData[key] = undefined);
 }
 
@@ -53,7 +48,6 @@ const startTimer = () => {
   formData.seconds--;
   if (formData.seconds >= 0) {
     setTimeout(() => {
-      console.log(formData.seconds);
       timerNode.innerText = `${formData.minutes} : ${formData.seconds < 10 ? `0${formData.seconds}` : formData.seconds}`;
       startTimer();
     }, 1000)
@@ -69,7 +63,45 @@ const startTimer = () => {
 }
 
 const stopTimer = () => {
-  console.log('sup');
+  const container = document.querySelector('form');
+  clearForm(event);
+  while (container.firstChild) {
+    container.firstChild.remove();
+  }
+  container.classList.add('form-section')
+  container.classList.remove('timer-section')
+  container.innerHTML = `
+  <h3>Select a category</h3>
+  <section class="categories">
+    <button id="button-study" class="inactive" value="study">
+      <img src="/assets/study.svg" class="button-icon" />
+      Study
+    </button>
+    <button id="button-meditate" class="inactive" value="meditate">
+      <img src="/assets/meditate.svg" class="button-icon" />
+      Meditate
+    </button>
+    <button id="button-exercise" class="inactive" value="exercise">
+      <img src="/assets/exercise.svg" class="button-icon" />
+      Exercise
+    </button>
+  </section>
+  <h3>What would you like to accomplish during this time?</h3>
+  <input id="input-intention" />
+  <div class="timer-inputs-section">
+    <div>
+      <h3>Minutes</h3>
+      <input id="input-minutes" type="number" />
+    </div>
+    <div>
+      <h3>Seconds</h3>
+      <input id="input-seconds" type="number" />
+    </div>
+  </div>
+  <div class="form-button-container">
+    <button class="start-button" id="button-submit">START ACTIVITY</button>
+  </div>
+  `
 }
 
 const handleFormButtons = event => {
