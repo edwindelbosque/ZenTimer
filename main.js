@@ -13,26 +13,27 @@ const formData = {
   seconds: undefined
 };
 
-const submitForm = (event) => {
+const submitForm = event => {
   if (inputIntention.value && inputMinutes.value && inputSeconds.value && formData.category) {
     formData.intention = inputIntention.value;
     formData.minutes = parseInt(inputMinutes.value);
     formData.seconds = parseInt(inputSeconds.value);
+    toggleForm(formData);
     clearForm(event);
-    toggleForm(event);
   }
 }
 
-const clearForm = (event) => {
-  const buttons = [buttonStudy, buttonMeditate, buttonExercise];
-  const formElements = [inputIntention, inputMinutes, inputSeconds];
+const clearForm = event => {
+  // const buttons = [buttonStudy, buttonMeditate, buttonExercise];
+  // const formElements = [inputIntention, inputMinutes, inputSeconds];
   const formKeys = Object.keys(formData);
-  buttons.forEach(button => button.classList.remove("active"));
-  formElements.forEach(element => element.value = '');
+  // buttons.forEach(button => button.classList.remove("active"));
+  // formElements.forEach(element => element.value = '');
   formKeys.forEach(key => formData[key] = undefined);
 }
 
-const toggleForm = (event) => {
+const toggleForm = formData => {
+  const { minutes, seconds } = formData;
   const container = document.querySelector('form');
   while (container.firstChild) {
     container.firstChild.remove();
@@ -41,14 +42,15 @@ const toggleForm = (event) => {
   container.classList.add('timer-section')
   container.innerHTML = `
   <h5>Deep Breathing</h5>
-  <h6 id="timer">05:00</h6>
+  <h6 id="timer">${minutes}:${seconds}</h6>
   <h4>START</h4>
   `
 }
 
-const fillOutTimer = (data) => {
+// const fillOutTimer = (data) => {
+//   const { intention, category, minutes, seconds } = formData;
 
-}
+// }
 
 const handleFormButtons = event => {
   event.preventDefault(event);
