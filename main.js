@@ -5,6 +5,7 @@ const buttonStudy = document.querySelector('#button-study');
 const buttonMeditate = document.querySelector('#button-meditate');
 const buttonExercise = document.querySelector('#button-exercise');
 const buttonSubmit = document.querySelector('#button-submit');
+// const buttonStartTimer = document.querySelector('#button-start-timer');
 const form = document.querySelector('form');
 const formData = {
   intention: undefined,
@@ -18,8 +19,8 @@ const submitForm = event => {
     formData.intention = inputIntention.value;
     formData.minutes = parseInt(inputMinutes.value);
     formData.seconds = parseInt(inputSeconds.value);
-    toggleForm(formData);
-    clearForm(event);
+    toggleForm();
+    // clearForm(event);
   }
 }
 
@@ -32,8 +33,8 @@ const clearForm = event => {
   formKeys.forEach(key => formData[key] = undefined);
 }
 
-const toggleForm = formData => {
-  const { minutes, seconds } = formData;
+const toggleForm = () => {
+  const { intention, minutes, seconds } = formData;
   const container = document.querySelector('form');
   while (container.firstChild) {
     container.firstChild.remove();
@@ -41,16 +42,35 @@ const toggleForm = formData => {
   container.classList.remove('form-section')
   container.classList.add('timer-section')
   container.innerHTML = `
-  <h5>Deep Breathing</h5>
-  <h6 id="timer">${minutes}:${seconds}</h6>
-  <h4>START</h4>
+  <h5>${intention}</h5>
+  <h6 id="timer">${minutes} : ${seconds < 10 ? `0${seconds}` : seconds}</h6>
+  <h4 id="button-start-timer">START</h4>
   `
 }
 
-// const fillOutTimer = (data) => {
-//   const { intention, category, minutes, seconds } = formData;
+const startTimer = () => {
+  timerNode = document.querySelector('#timer')
+  formData.seconds--;
+  if (formData.seconds >= 0) {
+    setTimeout(() => {
+      console.log(formData.seconds);
+      timerNode.innerText = `${formData.minutes} : ${formData.seconds < 10 ? `0${formData.seconds}` : formData.seconds}`;
+      startTimer();
+    }, 1000)
+  } else if (formData.minutes > 0) {
+    formData.minutes--;
+    formData.seconds = 60;
+    startTimer();
+  } else {
+    setTimeout(() => {
+      stopTimer();
+    }, 1500)
+  }
+}
 
-// }
+const stopTimer = () => {
+  console.log('sup');
+}
 
 const handleFormButtons = event => {
   event.preventDefault(event);
@@ -62,6 +82,8 @@ const handleFormButtons = event => {
     toggleButton(event);
   } else if (event.target.id === 'button-submit') {
     submitForm(event);
+  } else if (event.target.id === 'button-start-timer') {
+    startTimer();
   }
 }
 
