@@ -50,10 +50,58 @@ form {
   border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.29);
   background-color: rgb(84, 74, 91);
-  padding: 30px 60px;
   flex-direction: column;
   color: white;
   justify-content: space-between;
+
+  padding: 10px 60px;
+  align-items: center;
+}
+
+.form-section {
+  /* padding: 30px 60px; */
+}
+
+.timer-section {
+  align-items: center;
+}
+
+h5 {
+  font-size: 25px;
+  margin-top: 30px;
+  font-weight: 300;
+}
+
+h6 {
+  font-size: 80px;
+  margin-top: 10px;
+}
+
+h4 {
+  font-size: 40px;
+  border: 2px solid violet;
+  text-align: center;
+  margin-top: 20px;
+  padding: 100px 60px;
+  cursor: pointer;
+  vertical-align: middle;
+  border-radius: 250px;
+  font-weight: 600;
+  margin-bottom: 100px;
+  transition: .2s ease-out;
+}
+
+h4:hover {
+  box-shadow: 0 0 20px rgb(231, 215, 255);
+  background-color: rgba(255, 255, 255, 0.096);
+  transition: .2s ease-out;
+}
+
+h4:active {
+  box-shadow: 0 0 50px rgb(231, 215, 255);
+  background-color: rgba(255, 255, 255, 0.817);
+  color: rgb(109, 109, 109);
+  transition: .2s;
 }
 
 aside {

@@ -19,6 +19,7 @@ const submitForm = (event) => {
     formData.minutes = parseInt(inputMinutes.value);
     formData.seconds = parseInt(inputSeconds.value);
     clearForm(event);
+    toggleForm(event);
   }
 }
 
@@ -29,6 +30,18 @@ const clearForm = (event) => {
   buttons.forEach(button => button.classList.remove("active"));
   formElements.forEach(element => element.value = '');
   formKeys.forEach(key => formData[key] = undefined);
+}
+
+const toggleForm = (event) => {
+  const container = document.querySelector('form');
+  while (container.firstChild) {
+    container.firstChild.remove();
+  }
+  parent.classList.remove('form-section')
+  parent.classList.add('timer-section')
+  container.innerHTML = `
+  <p>hello</p>
+  `
 }
 
 const handleFormButtons = event => {
