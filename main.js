@@ -14,7 +14,7 @@ const formData = {
 };
 
 const submitForm = (event) => {
-  if (inputIntention.value && inputMinutes.value && inputSeconds.value) {
+  if (inputIntention.value && inputMinutes.value && inputSeconds.value && formData.category) {
     formData.intention = inputIntention.value;
     formData.minutes = parseInt(inputMinutes.value);
     formData.seconds = parseInt(inputSeconds.value);
@@ -37,11 +37,17 @@ const toggleForm = (event) => {
   while (container.firstChild) {
     container.firstChild.remove();
   }
-  parent.classList.remove('form-section')
-  parent.classList.add('timer-section')
+  container.classList.remove('form-section')
+  container.classList.add('timer-section')
   container.innerHTML = `
-  <p>hello</p>
+  <h5>Deep Breathing</h5>
+  <h6 id="timer">05:00</h6>
+  <h4>START</h4>
   `
+}
+
+const fillOutTimer = (data) => {
+
 }
 
 const handleFormButtons = event => {

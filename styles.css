@@ -13,7 +13,7 @@ body {
 
 nav {
   height: 50px;
-  background-color: rgb(115, 99, 126);
+  background-color: rgb(84, 74, 91);
   display: flex;
   align-items: center;
 }
@@ -53,16 +53,15 @@ form {
   flex-direction: column;
   color: white;
   justify-content: space-between;
-
-  padding: 10px 60px;
-  align-items: center;
 }
 
 .form-section {
-  /* padding: 30px 60px; */
+  padding: 30px 60px;
 }
 
 .timer-section {
+  align-items: center;
+  padding: 10px 60px;
   align-items: center;
 }
 
@@ -79,7 +78,7 @@ h6 {
 
 h4 {
   font-size: 40px;
-  border: 2px solid violet;
+  border: 2px solid rgb(88, 149, 255);
   text-align: center;
   margin-top: 20px;
   padding: 100px 60px;
@@ -92,7 +91,7 @@ h4 {
 }
 
 h4:hover {
-  box-shadow: 0 0 20px rgb(231, 215, 255);
+  box-shadow: 0 0 20px rgba(231, 215, 255, 0.509);
   background-color: rgba(255, 255, 255, 0.096);
   transition: .2s ease-out;
 }
@@ -198,7 +197,7 @@ input:focus {
 
 .start-button {
   width: 230px;
-  background: rgb(246, 230, 255);
+  background: rgb(221, 208, 255);
   font-size: 22px;
   margin-top: 20px;
   padding: 5px 10px;
@@ -211,7 +210,7 @@ input:focus {
 }
 
 .start-button:hover {
-  background: rgb(250, 242, 255);
+  background: rgb(253, 250, 255);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.42);
   transition: .15s;
 }
