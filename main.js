@@ -80,15 +80,15 @@ const stopTimer = () => {
   <h3>Select a category</h3>
   <section class="categories">
     <button id="button-study" class="inactive" value="study">
-      <img src="/assets/study.svg" class="button-icon" />
+      <img src="assets/study.svg" class="button-icon" />
       Study
     </button>
     <button id="button-meditate" class="inactive" value="meditate">
-      <img src="/assets/meditate.svg" class="button-icon" />
+      <img src="assets/meditate.svg" class="button-icon" />
       Meditate
     </button>
     <button id="button-exercise" class="inactive" value="exercise">
-      <img src="/assets/exercise.svg" class="button-icon" />
+      <img src="assets/exercise.svg" class="button-icon" />
       Exercise
     </button>
   </section>
