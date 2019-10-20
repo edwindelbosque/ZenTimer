@@ -2,7 +2,8 @@
 
 ## Summary 
 I built this mindfulness-timer for the first time from the ground up in 6 hours, fully responsive.
-Check it out on GitHub Pages [here!](https://edwindelbosque.github.io/ZenTimer/)
+
+### Check it out on GitHub Pages [here!](https://edwindelbosque.github.io/ZenTimer/)
 
 ## Built with
 - **vanilla JavaScript**
